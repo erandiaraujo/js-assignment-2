@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Erandi Araujo, Mishel Mejia, Wilson Alejandro">
+    <title>Basic Geometry</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        .container {
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ccdddd;
+        }
+
+        section {
+            width: 65%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #c6dee9;
+            border-radius: 20px;
+        }
+
+        .go {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="top">Basic Geometry</h1>
+        <p>In this section, we are going to find the Area of some two-dimension shapes</p>
+        <p>You can click on any shape below:</p>
+        <ul>
+            <li><a href="#circle">Circle</a></li>
+            <li><a href="#triangle">Triangle</a></li>
+            <li><a href="#square">Square</a></li>
+            <li><a href="#rectangle">Rectangle</a></li>
+        </ul>
+
+        <section id="circle">
+            <h2>Circle Area</h2>
+            <label>Enter the value of the circle's radius:</label>
+            <input type="text" id="radius">
+            <button onclick="getCircleArea()">Calculate</button>
+            <p>Result: <input type="text" id="circle-area" readonly></p>
+        </section>
+
+        <div class="go">
+            <a href="#top">Go to Top</a>
+        </div>
+
+        <section id="triangle">
+            <h2>Triangle Area</h2>
+            <label>Enter base:</label>
+            <input type="text" id="base">
+            <label>Enter height:</label>
+            <input type="text" id="height">
+            <button onclick="getTriangleArea()">Calculate</button>
+            <p>Result: <input type="text" id="triangle-area" readonly></p>
+        </section>
+
+        <div class="go">
+            <a href="#top">Go to Top</a>
+        </div>
+
+        <section id="square">
+            <h2>Square Area</h2>
+            <label>Enter side length:</label>
+            <input type="text" id="side">
+            <button onclick="getSquareArea()">Calculate</button>
+            <p>Result: <input type="text" id="square-area" readonly></p>
+        </section>
+
+        <div class="go">
+            <a href="#top">Go to Top</a>
+        </div>
+
+        <section id="rectangle">
+            <h2>Rectangle Area</h2>
+            <label>Enter width:</label>
+            <input type="text" id="width">
+            <label>Enter height:</label>
+            <input type="text" id="rect-height">
+            <button onclick="getRectangleArea()">Calculate</button>
+            <p>Result: <input type="text" id="rectangle-area" readonly></p>
+        </section>
+
+        <div class="go">
+            <a href="#top">Go to Top</a>
+        </div>
+    </div>
+
+    <script>
+        function getCircleArea() {
+            let r = parseFloat(document.getElementById("radius").value.trim());
+            if (!isNaN(r)) {
+                document.getElementById("circle-area").value = (Math.PI * r * r).toFixed(2);
+            }
+        }
+
+        function getTriangleArea() {
+            let b = parseFloat(document.getElementById("base").value.trim());
+            let h = parseFloat(document.getElementById("height").value.trim());
+            if (!isNaN(b) && !isNaN(h)) {
+                document.getElementById("triangle-area").value = (0.5 * b * h).toFixed(2);
+            }
+        }
+
+        function getSquareArea() {
+            let a = parseFloat(document.getElementById("side").value.trim());
+            if (!isNaN(a)) {
+                document.getElementById("square-area").value = (a * a).toFixed(2);
+            }
+        }
+
+        function getRectangleArea() {
+            let w = parseFloat(document.getElementById("width").value.trim());
+            let h = parseFloat(document.getElementById("rect-height").value.trim());
+            if (!isNaN(w) && !isNaN(h)) {
+                document.getElementById("rectangle-area").value = (w * h).toFixed(2);
+            }
+        }
+    </script>
+</body>
+
+</html>
